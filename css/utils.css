@@ -1,0 +1,29 @@
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.absoluteCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: 7px;
+	padding: var(--spacing);
+	border: 0;
+	border-radius: 12px;
+	background: var(--tertiaryCol);
+	font-family: var(--family);
+	font-weight: var(--weight);
+	color: var(--secondaryCol);
+}
+
+.hover { cursor: pointer; transition: opacity 0.5s ease 0.05s }
+.hover:hover { opacity: 0.7; }

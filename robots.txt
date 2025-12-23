@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://unseenumair.github.io/imgEditor/sitemap.xml

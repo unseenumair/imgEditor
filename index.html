@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO -->
+    <meta name="keywords" content="image editor, online image editor, photo editor, web image editor, javascript image editor, responsive image editor, HTML CSS JS project, modern UI image editor, browser image editing">
+    <meta name="description" content="Modern responsive web-based Image Editor for editing photos directly in the browser. Live demo by Umair Shakoor.">
+    <title>Image Editor - Umair Shakoor</title>
+
+    <!-- Preloading Styles -->
+    <link rel="preload" href="main.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&700&display=swap" as="style">
+
+    <!-- Linking Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/unseenumair/universal-signature@main/styles.css">
+
+    <!-- Fav -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://unseenumair.github.io/imgEditor/">
+
+    <!-- CDN -->
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js" defer></script>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Image Editor - Umair Shakoor">
+    <meta property="og:description" content="Modern responsive web-based Image Editor for editing photos directly in the browser. Live demo by Umair Shakoor.">
+    <meta property="og:url" content="https://unseenumair.github.io/imgEditor/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://unseenumair.github.io/imgEditor/assets/preview.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Image Editor - Umair Shakoor">
+    <meta name="twitter:description" content="Modern responsive web-based Image Editor for editing photos directly in the browser. Live demo by Umair Shakoor.">
+    <meta name="twitter:image" content="https://unseenumair.github.io/imgEditor/assets/preview.jpg">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Image Editor",
+      "url": "https://unseenumair.github.io/imgEditor/",
+      "author": {
+        "@type": "Person",
+        "name": "Umair Shakoor",
+        "url": "https://unseenumair.github.io/"
+      },
+      "description": "Modern responsive web-based Image Editor for editing photos directly in the browser."
+    }
+    </script>
+    <style> 
+            /* Aside */ 
+            #loadingScreen { 
+                display: flex; 
+                flex-direction: column; 
+                gap: 25px; 
+                justify-content: center; 
+                align-items: center; 
+                position: absolute; 
+                z-index: 10000000; 
+                top: 0; 
+                left: 0; 
+                width: 100%; 
+                height: 100%; 
+                background: black; 
+                opacity: 1; 
+                transition: opacity 1.5s ease 0.05s; 
+                pointer-events: none; 
+            } 
+            
+            #logo { 
+                gap: 15px; 
+            } 
+            
+            #logo h1 { font-size: 3.5rem; } 
+    </style> 
+</head>
+<body class="center">
+	<main>
+		<section id="actions" class="center">
+			<div class="button hover" id="openFilters"><iconify-icon icon="mynaui:filter-solid" width="24" height="24"></iconify-icon> Filters</div>
+			<div class="button hover" id="reset"><iconify-icon icon="system-uicons:reset" width="24" height="24"></iconify-icon> Reset</div>
+			<div class="button hover" id="downloadBtn"><iconify-icon icon="mage:file-download-fill" width="24" height="24"></iconify-icon>Download</div>
+		</section>
+		<section id="preview" class="center">
+			<img src="loader.svg" class="absoluteCenter" id="loader">
+			<div id="placeholder" class="hover">
+				<label for="img-input" style="flex-flow: row wrap; cursor: pointer;" class="center"><iconify-icon icon="mage:file-upload-fill" width="100" height="100"></iconify-icon> Choose Image</label>
+				<input type="file" accept="image/*" id="img-input" hidden>
+			</div>
+			<canvas style="display: none;" ></canvas> 
+			<img id="previewImg" class="absoluteCenter">
+			<div id="message" class="center"><span class="button center"><iconify-icon icon="ix:error" width="22" height="22"></iconify-icon> <span id="msgText"></span></span></div>
+		</section>
+		<section id="editor"> 
+			<iconify-icon id="closeFilters" class="hover" icon="qlementine-icons:filter-crossed-16" width="24" height="24"></iconify-icon>
+			<div id="filtersCont"></div> 
+			<div id="presetsCont" class="center"></div>
+		</section> 
+	</main>
+	<aside id="loadingScreen" class="center">
+		<div id="logo" class="center">
+			<img src="assets/favicon.png" width="65" height="65" alt="Logo">
+			<h1 class="hover">Img Editor</h1>
+		</div>
+		<img src="assets/loader.svg">
+	</aside>
+	<!-- JS -->
+	<script type="text/javascript"> 
+		// Hide Loading Screen 
+		const loadingScreen = document.querySelector("#loadingScreen"); 
+		window.addEventListener("load", ()=>{ 
+			setTimeout(()=>{ 
+				loadingScreen.style.opacity = "0"; 
+				setTimeout(()=>loadingScreen.style.display="none", 1000); 
+			},500); 
+		}); 
+	</script> 
+	<script src="js/main.js" defer></script> 
+	<script 
+	  src="https://cdn.jsdelivr.net/gh/unseenumair/universal-signature@main/script.js" 
+	  data-position='["bottom","right"]' 
+	  data-offset='["3%", "2%"]' 
+	  data-bg="linear-gradient(to top left, transparent, hsla(255deg 100% 50% / 90%))"> 
+	</script> 
+</body>
+</html>

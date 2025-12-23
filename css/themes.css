@@ -1,0 +1,16 @@
+:root {
+	/* Fonts */
+	--family: "QuickSand", system-ui, sans-serif;
+	--weight: 600; 
+
+	/* Colors */
+	--primaryCol: hsla(0 0% 0% / 90%);
+	--accentCol: hsla(0 0% 0% / 20%);
+	--secondaryCol: hsla(100 100% 100% / 90%);
+	--tertiaryCol: hsla(255deg 100% 50% / 90%);
+
+	/* Buttons Padding */
+	--spacing: 10px 15px;
+
+	--u: 1px solid red;
+}

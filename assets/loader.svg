@@ -1,0 +1,28 @@
+<svg width="61" height="13" viewBox="0 0 61 13" xmlns="http://www.w3.org/2000/svg"><defs><style>
+              @keyframes scale_up_DHWON {
+                0% {
+                  transform: scale(0);
+                }
+                100% {
+                  transform: scale(1);
+                }
+              }
+              
+              @keyframes scale_down_DHWON {
+                0% {
+                  transform: scale(1);
+                }
+                100% {
+                  transform: scale(0);
+                }
+              }
+              
+              @keyframes translate_DHWON {
+                0% {
+                  transform: translate(0, 0);
+                }
+                100% {
+                  transform: translate(24px, 0);
+                }
+              }
+            </style></defs><circle cx="6.5" cy="6.5" r="6.5" fill="royalblue" style="animation:scale_up_DHWON 0.6s infinite;animation-timing-function:cubic-bezier(0, 1, 1, 0);transform-origin:6.5px 6.5px"></circle><circle cx="6.5" cy="6.5" r="6.5" fill="royalblue" style="animation:translate_DHWON 0.6s infinite;animation-timing-function:cubic-bezier(0, 1, 1, 0)"></circle><circle cx="30.5" cy="6.5" r="6.5" fill="royalblue" style="animation:translate_DHWON 0.6s infinite;animation-timing-function:cubic-bezier(0, 1, 1, 0)"></circle><circle cx="54.5" cy="6.5" r="6.5" fill="royalblue" style="animation:scale_down_DHWON 0.6s infinite;animation-timing-function:cubic-bezier(0, 1, 1, 0);transform-origin:54.5px 6.5px"></circle></svg>
